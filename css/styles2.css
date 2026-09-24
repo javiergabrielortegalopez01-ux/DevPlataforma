@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    height: 100vh;
+}
+
+
+body{
+    height: 100%;
+}
+
+.contenedorPrincipal {
+    background-color: gainsboro;
+    display: grid;
+
+    grid-template-columns: auto 9fr;
+    grid-template-rows: max-content auto max-content;
+    
+
+    grid-template-areas: "navegacion navegacion"
+    "lateral main"
+    "footer footer";
+
+
+    font-size: 20px;
+
+    font-family:Arial;
+
+    height: 100vh;
+
+
+}
+
+
+
+
+.barraNavegacion{
+    grid-area: navegacion;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    background-color: white;
+    padding: 15px;
+
+    height: max-content;
+
+    border: 2px gainsboro solid;
+}
+
+.barraNavegacion img {
+    height: 50px;
+    width: 50px;
+    border-radius: 200px;
+
+    object-fit: cover;
+}
+
+.seccionLogo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.barraLateral{
+    grid-area: lateral;
+    display: flex;
+    flex-direction: column;
+
+    background-color:rgb(20, 20, 48);
+
+    color: aliceblue;
+}
+
+.barraLateral a{
+    padding: 20px;
+    padding-right: 80px;
+    transition: 0.4s;
+    border-left: 5px rgb(20, 20, 48) solid;
+}
+
+
+.barraLateral a:hover{
+    background-color: rgb(78, 78, 250);
+    border-left: 5px blue solid;
+    transition: 0.4s;
+}
+
+.btn:hover{
+    background-color: rgb(156, 156, 255);
+    transition: 0.4s;
+}
+
+.btn {
+    transition: 0.4s;
+}
+
+main {
+    grid-area: main;
+    background-color: rgb(238, 236, 236);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.seccionProyecto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seccionProyecto a{
+    background-color: rgb(61, 61, 252);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: aliceblue;
+    border-radius: 20px;
+}
+
+.carrusel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px
+}
+.carrusel article {
+    background-color: white;
+    padding: 30px;
+    width: 360px;
+    border-radius: 10px;
+    border: 2px gainsboro solid;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.carrusel article:hover {
+    transform: translateY(-10px);
+    transition: 0.4s;
+}
+
+.etiqueta {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: max-content;
+    border-radius: 40px;
+
+
+}
+
+.Desarollo{
+    background-color:cornflowerblue;
+    color: blue;
+}
+
+.Revision{
+    background-color:rgb(237, 200, 100);
+    color: rgb(119, 89, 8);
+}
+
+.Completado{
+    background-color:rgb(132, 237, 100);
+    color: rgb(6, 95, 6);
+}
+
+.seccionEtiquetas {
+    display: flex;
+    gap: 20px;
+}
+
+.seccionEtiquetas p {
+    background-color:gainsboro;
+    padding: 5px;
+    border: 1px gray solid;
+    border-radius: 10px;
+}
+
+.cerrarSesion {
+    color: red;
+    text-decoration: none;
+}
+
+
+.desplegable {
+    display: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .barraLateral{
+        display: none;
+    }
+    
+    
+    .contenedorPrincipal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .seccionProyecto {
+        flex-direction: column;
+        gap: 40px;
+        align-items:baseline;
+    }
+
+    .desplegable{
+        display: block;
+    }
+
+    
+    }
+
+
+span {
+    font-style: italic;
+}
+
+
+footer {
+    grid-area: footer;
+    height: max-content;
+    border: 2px gainsboro solid;
+    background-color: white;
+    height: 40px;
+    justify-items: center;
+    align-content: center;
+}
+
+
+
+
+
+body:has(.desplegable:checked) .barraLateral{
+    display: flex;
+}
+
+
+
+body:has(.tono:checked) main {
+    background-color: rgba(41, 1, 78, 0.863);
+    color: white;
+}
+
+body:has(.tono:checked) .barraNavegacion {
+    background-color: rgba(3, 0, 46, 0.863);
+    color: white;
+    border: 1px darkblue solid;
+}
+
+body:has(.tono:checked) main {
+    background-color: rgba(41, 1, 78, 0.863);
+}
+
+body:has(.tono:checked) article {
+    background-color: rgba(46, 31, 129, 0.863);
+    border: 1px darkblue solid;
+}
+
+body:has(.tono:checked) footer {
+    background-color: rgba(3, 0, 46, 0.863);
+    color: white;
+    border: 1px darkblue solid;
+}
+
+body:has(.tono:checked) .seccionEtiquetas {
+    color: black;
+}

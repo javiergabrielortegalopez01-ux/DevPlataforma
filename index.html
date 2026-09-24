@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <section>
+        <h1>Dev<span>Plataform</span></h1>
+        <p> Ingresa tus credenciales para acceder al panel de control</p>
+        <br>
+        <form method="get" action="dashboard.html">
+            <label for="Correo">Correo Electronico *</label>
+            <input type="email" id="Correo" placeholder="Ejemplo: HolaSoySENA@gmail.com" required>
+            <br>
+            <label for="Contraseña">Contraseña *</label>
+            <input type="password" id="Contraseña" placeholder="●●●●●●" required minlength=6>
+            <br>
+            <label for="Rol">Rol de desarrollo *</label>
+            <select id="Rol" required>
+                <option>Selecciona Una Opcion</option>
+                <option>Desarrollador Frontend</option>
+                <option>Desarrollador Backend</option>
+                <option>Desarrollador FullStack</option>
+            </select>
+            
+            <br>
+            <div>
+                <input type="checkbox" class="checkbox" required>
+                <p>Acepto los terminos de servicio y politica de privacidad</p>
+            </div>
+            <br>
+
+            <input type="submit" class="boton">
+        </form>
+    </section>
+    
+</body>
+</html>
